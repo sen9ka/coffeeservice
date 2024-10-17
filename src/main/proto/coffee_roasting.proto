@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.example.coffeeservice.proto;
+
+service CoffeeRoastingService {
+  rpc CreateRoastingInfo(RoastingRequest) returns (RoastingResponse);
+}
+
+message RoastingRequest {
+  string type = 1;
+  string country = 2;
+  double weight = 3;
+  int64 brigadeNumber = 4;
+}
+
+message RoastingResponse {
+  bool success = 1;
+  string message = 2;
+}
